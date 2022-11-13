@@ -1,0 +1,13 @@
+@import '../../../../style/variables.scss';
+
+.authContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  .authBlock{
+    border: 1px solid $main-pink ;
+  }
+}
