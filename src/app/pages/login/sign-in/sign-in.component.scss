@@ -1,4 +1,4 @@
-@import '../../../../style/variables.scss';
+@import '../../../../theme/variables.scss';
 
 .authContainer{
   display: flex;
@@ -9,5 +9,21 @@
   min-height: 100vh;
   .authBlock{
     border: 1px solid $main-pink ;
+    border-radius: 5%;
+  }
+}
+
+.logo-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width:10%;
+
+  .logo{
+    max-width:3rem;
+    width:80%;
+    margin: .5rem;
   }
 }
