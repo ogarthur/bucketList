@@ -13,3 +13,16 @@ body {
   font-size: 14px;
   color:$main-pink
 }
+
+.link-to{
+    &:hover{
+      color: $link;
+      font-weight: 500;
+      cursor:pointer;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}

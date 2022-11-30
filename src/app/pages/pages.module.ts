@@ -9,6 +9,7 @@ import { DashboardComponent } from './login/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module'
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home/home.component';
 
 
 
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

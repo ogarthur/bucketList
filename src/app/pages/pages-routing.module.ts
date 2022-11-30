@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignInComponent} from './login/sign-in/sign-in.component'
@@ -10,7 +11,7 @@ import { VerifyEmailComponent } from './login/verify-email/verify-email.componen
 import { AuthGuard } from '../shared/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', canActivate: [AuthGuard],component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
