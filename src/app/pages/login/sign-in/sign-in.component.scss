@@ -6,24 +6,60 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  height: 100%;
   .authBlock{
-    border: 1px solid $main-pink ;
+    background-color: $main-grey;
+    box-shadow: 3px 3px 24px -3px $main-pink;
+    -webkit-box-shadow: 3px 3px 24px -3px $main-pink;
+    -moz-box-shadow: 3px3px 24px -3px $main-pink;
     border-radius: 5%;
+    padding:2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .button-submit{
+        margin-left: auto;
+        margin-right: 1rem;
+      }
+    }
+  }
+  .logo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:10%;
+
+    .logo{
+      width:9rem;
+      margin: 1rem;
+    }
+  }
+.motto{
+  margin: 2rem 0;
+  font-weight: 500;
+  .owner{
+    font-weight: 500;
+    font-size: 1.1rem;
   }
 }
-
-.logo-container{
+.login-options{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width:10%;
+  flex-direction: row;
+  margin:1rem 0 0 0;
+  gap: 10px;
 
-  .logo{
-    max-width:3rem;
-    width:80%;
-    margin: .5rem;
+  .redirectToLogin,.forgotPassword{
+    &:hover{
+      color: $main-blue;
+      cursor:pointer;
+    }
   }
 }
+}
+

@@ -7,6 +7,8 @@ import { VerifyEmailComponent } from './login/verify-email/verify-email.componen
 import { DashboardComponent } from './login/dashboard/dashboard.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module'
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,8 +22,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule
   ],
   exports:[
     SignInComponent,

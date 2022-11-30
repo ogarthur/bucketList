@@ -1,53 +1,47 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-      <div class="formGroup">
-        <input
-          type="email"
-          class="formControl"
-          placeholder="Email Address"
-          #userEmail
-          required
-        />
-      </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPwd
-          required
-        />
-      </div>
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Sign Up"
-          (click)="authService.SignUp(userEmail.value, userPwd.value)"
-        />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.GoogleAuth()"
-        >
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-    </div>
-    <div class="redirectToLogin">
-      <span
-        >Already have an account?
-        <span class="redirect" routerLink="/sign-in">Log In</span></span
-      >
-    </div>
+<div class="authContainer">
+  <div class="logo-container">
+    <img class="logo" src="/assets/images/logo.png">
   </div>
+  <div class="authBlock">
+    <form [formGroup]="signUp" (submit)="submit()">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="signUpFormControl['email'].errors">Not a valid email</mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error *ngIf="signUpFormControl['password'].errors">
+          <span *ngIf="signUpFormControl['password'].errors['minlength']">
+            Required length of 8
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput formControlName="confirmPassword" type="password">
+        <mat-error *ngIf="signUpFormControl['confirmPassword'].errors">
+
+          <span *ngIf="signUpFormControl['confirmPassword'].errors['passwordMismatch']">
+            Password do not match
+          </span>
+        </mat-error>
+      </mat-form-field>
+
+      <button [disabled]="!signUp.valid" mat-raised-button class="button-submit" color="primary" type="submit">Sign
+        up</button>
+
+      <div class="login-options">
+        <div class="redirectToLogin" routerLink='/sign-in' routerLinkActive="active">
+          <span class="redirect">Log in</span>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <span class="motto">A project by <span class="owner">La adminstración Piña</span></span>
+
 </div>

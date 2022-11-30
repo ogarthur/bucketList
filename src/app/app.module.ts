@@ -15,7 +15,11 @@ import { environment } from '../environments/environment';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthService } from './shared/services/auth.service';
+import { MaterialModule } from './material/material.module'
+
+import { AuthService } from './shared/services/auth/auth.service';
+import { CustomValidationService } from './shared/services/customValidation/custom-validation.service';
+
 import { CommonModule } from '@angular/common';
 import { PagesModule } from './pages/pages.module';
 @NgModule({
@@ -36,9 +40,11 @@ import { PagesModule } from './pages/pages.module';
     AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
-    PagesModule
+    PagesModule,
+    MaterialModule,
+
   ],
-  providers: [AuthService],
+  providers: [AuthService,CustomValidationService],
   bootstrap: [AppComponent],
 
   exports:[
