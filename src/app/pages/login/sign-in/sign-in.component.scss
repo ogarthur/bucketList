@@ -11,9 +11,9 @@
     width: 80%;
     max-width: 360px;
     background-color: $main-grey;
-    box-shadow: 3px 3px 24px -3px $main-pink;
+/*     box-shadow: 3px 3px 24px -3px $main-pink;
     -webkit-box-shadow: 3px 3px 24px -3px $main-pink;
-    -moz-box-shadow: 3px3px 24px -3px $main-pink;
+    -moz-box-shadow: 3px3px 24px -3px $main-pink; */
     border-radius: 5%;
     padding:2.5rem;
     display: flex;
@@ -52,6 +52,7 @@
   .redirectToLogin,.forgotPassword{
     &:hover{
       color: $link;
+      font-weight: 500;
       cursor:pointer;
     }
   }
