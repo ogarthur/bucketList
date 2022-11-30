@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth/auth.service';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { CustomValidationService } from 'src/app/shared/services/customValidation/custom-validation.service';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,14 +11,17 @@ import { CustomValidationService } from 'src/app/shared/services/customValidatio
 })
 export class SignUpComponent implements OnInit {
   matchPasswords: boolean = false;
+
   constructor(
     public authService: AuthService,
     public fb: FormBuilder,
     private customValidator: CustomValidationService
   ) {}
+
   signUp = this.fb.group(
     {
       email: ['', [Validators.required, Validators.email]],
+      nickName: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
     },
@@ -33,6 +37,7 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     console.log(this.signUp.controls);
+    this.authService.SignUp(this.signUp.controls['email'].value,this.signUp.controls['password'].value,this.signUp.controls['nickName'].value)
   }
 
   get signUpFormControl() {

@@ -1,6 +1,6 @@
 <div class="authContainer">
   <div class="logo-container">
-    <img class="logo" src="/assets/images/logo.png">
+    <img class="logo wobble-hor-bottom" src="/assets/images/logo.png">
   </div>
   <div class="authBlock">
     <form [formGroup]="signUp" (submit)="submit()">
@@ -9,6 +9,12 @@
         <mat-label>Email</mat-label>
         <input matInput formControlName="email">
         <mat-error *ngIf="signUpFormControl['email'].errors">Not a valid email</mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>NickName</mat-label>
+        <input matInput formControlName="nickName">
+        <mat-error *ngIf="signUpFormControl['nickName'].errors">Minimum length 3</mat-error>
 
       </mat-form-field>
       <mat-form-field appearance="outline">
@@ -42,6 +48,8 @@
 
     </form>
   </div>
-  <span class="motto">A project by <span class="owner">La adminstración Piña</span></span>
-
+  <div class="owner-container">
+    <span class="motto">A project by </span>
+    <img  class="logo-owner-small"src="/assets/images/logo-owner.png">
+  </div>
 </div>

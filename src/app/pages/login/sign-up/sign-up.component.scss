@@ -8,6 +8,8 @@
   text-align: center;
   height: 100%;
   .authBlock{
+    width: 80%;
+    max-width: 360px;
     background-color: $main-grey;
     box-shadow: 3px 3px 24px -3px $main-pink;
     -webkit-box-shadow: 3px 3px 24px -3px $main-pink;
@@ -40,14 +42,7 @@
       margin: 1rem;
     }
   }
-.motto{
-  margin: 2rem 0;
-  font-weight: 500;
-  .owner{
-    font-weight: 500;
-    font-size: 1.1rem;
-  }
-}
+
 .login-options{
   display: flex;
   flex-direction: row;
@@ -56,10 +51,22 @@
 
   .redirectToLogin{
     &:hover{
-      color: $main-blue;
+      color: $link;
+      font-weight: 500;
       cursor:pointer;
     }
   }
 }
 }
 
+.owner-container{
+  display: flex;
+  flex-direction: column;
+  .logo-owner-small{
+    width:6rem;
+  }
+  .motto{
+    margin: 2rem 0 .1rem 0;
+    font-weight: 500;
+  }
+}

@@ -48,12 +48,15 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string) {
+  SignUp(email: string, password: string, nickName:string) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
+        if(result.user){
+          result.user.displayName = nickName
+        }
         this.SendVerificationMail();
         this.SetUserData(result.user);
       })
