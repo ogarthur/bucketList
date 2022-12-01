@@ -21,7 +21,6 @@ export class SignUpComponent implements OnInit {
   signUp = this.fb.group(
     {
       email: ['', [Validators.required, Validators.email]],
-      nickName: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
     },
@@ -36,12 +35,10 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {}
 
   submit() {
-    console.log(this.signUp.controls);
-    this.authService.SignUp(this.signUp.controls['email'].value,this.signUp.controls['password'].value,this.signUp.controls['nickName'].value)
+    this.authService.SignUp(this.signUp.controls['email'].value,this.signUp.controls['password'].value)
   }
 
   get signUpFormControl() {
-    console.log(this.signUp.controls);
     return this.signUp.controls;
   }
 

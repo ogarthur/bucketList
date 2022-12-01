@@ -11,12 +11,7 @@
         <mat-error *ngIf="signUpFormControl['email'].errors">Not a valid email</mat-error>
 
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>NickName</mat-label>
-        <input matInput formControlName="nickName">
-        <mat-error *ngIf="signUpFormControl['nickName'].errors">Minimum length 3</mat-error>
 
-      </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input matInput formControlName="password" type="password">
